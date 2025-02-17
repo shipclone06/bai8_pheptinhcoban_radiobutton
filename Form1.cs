@@ -44,11 +44,37 @@ namespace bai8_pheptinhcoban_radiobutton
 
         private void button1_Click(object sender, EventArgs e)
         {
-            double so1 = double.Parse(textBox2.Text);
+            double so1 = double.Parse(textBox1.Text);
             double so2 = double.Parse(textBox2.Text);
             if (RDcong.Checked)
+            {
+                textBox3.Text = (so1 + so2).ToString();
+            }
+            if (RDtru.Checked)
+            {
+                textBox3.Text = (so1 - so2).ToString();
+            }
+            if (RDnhan.Checked)
+            {
+                textBox3.Text = (so1 * so2).ToString();
+            }
+            if (RDchia.Checked)
+            {
+                if(so2==0)
                 {
-                textBox2 = new TextBox();
+                    textBox3.Text = "lỗi chia 0";
+                }
+            else
+                {
+                    textBox3.Text = (so1 / so2).ToString();
+                }
+            }
+            
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
